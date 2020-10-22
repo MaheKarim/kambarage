@@ -1,0 +1,39 @@
+@media only screen and (max-width: 991px){
+    .woocommerce-product-details__short-description {
+        display: block !important;
+    }
+    .woocommerce .size-woocommerce_thumbnail, img.woocommerce-placeholder, img.attachment-woocommerce_thumbnail {
+        width: 100%;
+        height: 172px;
+        border-radius: .35rem !important;
+    }
+    .arimo {
+        font-family: 'Arimo', sans-serif;
+        font-size: 13px !important;
+    }    
+} 
+#back-to-top {
+    right: 90px !important;
+}
+#read-warning{
+    padding: 10px;
+    background-color: #007717;
+    color: white;
+    margin-top: 10px;
+    border-radius: 11px;
+    font-weight: bolder;
+}
+#change-password-errors{
+    margin: 15px;
+    color: white;
+    background-color: red;
+    padding: 9px;
+    border-radius: 10px;
+}
+#change-password-success{
+    padding: 20px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border-radius: 11px;
+}

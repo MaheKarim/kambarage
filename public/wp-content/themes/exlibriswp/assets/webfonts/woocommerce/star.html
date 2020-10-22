@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- include internal CSS custom styles based on ACF custom fields -->
+	
+	<style>
+
+<!-- General styles -->
+
+body { color: #212529;	}
+body a { color: #212529; }
+body a:hover { color: #909090;	}		
+body.dark-mode a:hover { color: #909090;	}
+body.dark-mode .btn-custom {color: #ffffff;}
+body.dark-mode .btn-custom:hover, .btn-custom:focus, .btn-custom:active, .btn-custom.active, .open .dropdown-toggle.btn-custom { color: #FFFFFF; background-color: #1e73be; border-color: #1e73be; } 
+ul.menu > li { font-size: 14px; }	
+mark, .mark { border-radius: .75rem !important }
+.bg { background: #f8f9fa; z-index: 0; }
+.bg-side { background: #e8f9f9; }	
+.bg-navbar { background-color: #f8f9fa; }
+.bg-current { background: ; }
+.bg-footer { background: #f4f4f4; }
+.bg-nextprev { background: ; }
+.bg-cart-totals, .bg-customer-order-address { background: #F1F1F1; }
+.hamb-menu { color: #212529; }
+.navbar-2 .nav-link { color: #333333; }
+.logo {	height: 55px; }
+.navbar-height { height: 70px; }
+.navbar-search { top: 70px; } 
+.scrollbar::-webkit-scrollbar-thumb { border: 3px solid #e8f9f9; }
+.wc-navigation-sticky-top, .navigation-sticky-top { top: 70px; }
+.pace .pace-progress { background: #ff0000; }
+.pt-fixed { top: 70px; }
+@media only screen and (max-width: 1130px) { .pt-fixed { top: calc(70px * 1.75 ); } }
+.slider-cover { height: calc(70vh - 70px); }
+.page-wide-cover { height: calc(100vh - 70px); }
+.single-comments-content { background: #E5FBFB; }
+.border-custom { border:1rem solid; border-color: #f8f9fa; }
+.sticky-top-left-title { top: calc(70px + 1rem); }
+.page-numbers { color: #ffffff; background-color: #007aff; border-color: #007aff; border-radius: .75rem !important } 
+.border-class, #border-class { border-radius: .75rem !important }
+.border-more-rounded { border-radius: 2rem; -webkit-border-radius: 2rem; -moz-border-radius: 2rem; } 
+.book-card-bg { background-color: #e0e6fb; }
+.book-card-bg:hover { background-color: #f6ffd5; }
+.book-card-txt, .book-card-txt a, .book-card-txt a:hover, body.dark-mode .book-card-txt a { color: #212529; }
+.title-in a, .text-in, .title-out a, .text-out { color: #ffffff;}
+.home-va-btn a { color: #007aff; }
+.author-name a, .author-name-archive a { color: #007aff; }
+.publisher-name a, .publisher-name-archive a { color: #000000; }
+.hamb-menu, .hamb-menu-right, .dropdown-sidenav-btn { color: #007AFF; }
+.btn-custom { color: #ffffff !important; background-color: #007aff !important; border-color: #007aff !important; border-radius: .75rem !important } 
+.btn-custom:hover, .btn-custom:focus, .btn-custom:active, .btn-custom.active, .open .dropdown-toggle.btn-custom { color: #FFFFFF !important; background-color: #1e73be !important; border-color: #1e73be !important; } 
+.menu-item { border-radius: .75rem !important } 
+.menu-hover:hover, .col-hover:hover { background: #d3eeff; border-radius: .75rem !important }
+.grid-sizer {  }
+@media only screen and (min-width: 769px) and (max-width: 991px) { .grid-sizer,.grid-item-3,.grid-item-4,.grid-item-5 { width: 33.333%; } }	
+#search input[type="radio"]:after, #search input[type="radio"]:checked:after { border-radius: .75rem !important }
+.grid-sizer-pc {  }
+@media only screen and (min-width: 769px) and (max-width: 991px) { .grid-sizer-pc,.grid-item-pc-3,.grid-item-pc-4,.grid-item-pc-5,.grid-item-pc-6,.grid-item-pc-7 { width: 33.333%; } }	
+.grid-sizer-pr { width: 16.666666%; }
+@media only screen and (min-width: 769px) and (max-width: 991px) { .grid-sizer-pr,.grid-item-pr-3,.grid-item-pr-4,.grid-item-pr-5,.grid-item-pr-6,.grid-item-pr-7 { width: 33.333%; } }	
+.previous:before { content: "\f053"; }  
+.next:before { content: "\f054"; }
+.social-icons { background: #007aff; border-radius: 50% !important; } 
+.social-icons a:not([href]), .social-icons a:not([href]):hover, .social-icons a, .social-icons a:hover { color: #FFFFFF; }  
+
+<!-- Woocommerce -->
+
+.woocommerce #content input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover, .woocommerce-page #content input.button.alt:hover, 
+.woocommerce-page #respond input#submit.alt:hover, .woocommerce-page a.button.alt:hover, 
+.woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover {
+	background: #1e73be;
+	background-color: #1e73be;
+	box-shadow: none;
+	text-shadow: transparent;
+	color: #ffffff;
+	border-color: #1e73be;
+}
+
+.woocommerce #content input.button:hover, .woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, .woocommerce button.button:hover, 
+.woocommerce input.button:hover, .woocommerce-page #content input.button:hover, 
+.woocommerce-page #respond input#submit:hover, .woocommerce-page a.button:hover, 
+.woocommerce-page button.button:hover, .woocommerce-page input.button:hover {
+	background: #1e73be;
+	background-color: #1e73be;
+	box-shadow: none;
+	text-shadow: transparent;
+	color: #ffffff;
+	border-color: #1e73be;
+}
+
+.woocommerce #content input.button, .woocommerce #respond input#submit, 
+.woocommerce a.button, .woocommerce button.button, .woocommerce input.button, 
+.woocommerce-page #content input.button, .woocommerce-page #respond input#submit, 
+.woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button {
+	background: #f1f1f1;
+	color: #333333;
+}
+
+.woocommerce #content input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover, .woocommerce-page #content input.button.alt:hover, 
+.woocommerce-page #respond input#submit.alt:hover, .woocommerce-page a.button.alt:hover, 
+.woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover {
+	background: #1e73be;
+	box-shadow: none;
+	text-shadow: transparent;
+	color: #ffffff;
+	border-color: #1e73be;
+}
+
+.woocommerce div.product span.price, .woocommerce .taxonomy-summary p.price { font-size: 15px; }
+.woocommerce span.onsale { color: #ffffff; }
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {    
+    background: #E5FBFB;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce-checkout .woocommerce form .form-row .select2-container {
+	border-radius: .75rem !important;
+}
+
+.woocommerce .size-woocommerce_thumbnail, img.woocommerce-placeholder, img.attachment-woocommerce_thumbnail {
+	width: 100%;
+	height: auto;
+	border-radius: .75rem !important;
+}
+
+</style>	
+	
+    <title>Page not found &#8211; EXLIBRIS</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="EXLIBRIS &raquo; Feed" href="https://demo.ramsthemes.com/projects/exlibris/feed/" />
+<link rel="alternate" type="application/rss+xml" title="EXLIBRIS &raquo; Comments Feed" href="https://demo.ramsthemes.com/projects/exlibris/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/demo.ramsthemes.com\/projects\/exlibris\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-includes/css/dist/block-library/style.min.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='wc-block-style-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style.css?ver=2.5.16'  media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.9'  media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=4.2.0'  media='only screen and (max-width: 768px)' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='flickity-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/css/flickity.min.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='bootstrap-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/bootstrap/bootstrap.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='bootstrap-drawer-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/css/bootstrap-drawer.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='scrollbar-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/css/simplebar.min.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='font-awesome-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/fontawesome/all.min.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='lightbox-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/css/ekko-lightbox.min.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='googleFonts-css'  href='https://fonts.googleapis.com/css?family=Work+Sans%3A300%2C400%2C500%2C700%7CArimo%3A400%2C700&#038;ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='exlibriswp-basics-wc-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/css/woocommerce-basics.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='exlibriswp-custom-wc-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/css/woocommerce-custom.css?ver=5.4.2'  media='all' />
+<link rel='stylesheet' id='exlibriswp-custom-css-css'  href='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/css/main.css?ver=0.1.0'  media='all' />
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/jquery/jquery.min.js'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/simplebar.js?ver=1'></script>
+<link rel='https://api.w.org/' href='https://demo.ramsthemes.com/projects/exlibris/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo.ramsthemes.com/projects/exlibris/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://demo.ramsthemes.com/projects/exlibris/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<meta name="generator" content="WooCommerce 4.2.0" />
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<link rel="icon" href="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/cropped-exlibris-web-thumb-36x36.jpg" sizes="32x32" />
+<link rel="icon" href="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/cropped-exlibris-web-thumb-300x300.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/cropped-exlibris-web-thumb-300x300.jpg" />
+<meta name="msapplication-TileImage" content="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/cropped-exlibris-web-thumb-300x300.jpg" />
+
+</head>
+
+<body class="error404 bg theme-exlibriswp woocommerce-no-js post-the-life-of-captain-marvel-trailer-released woocommerce woocommerce-page"id="loadfade"class="post-194 post type-post status-publish format-standard has-post-thumbnail hentry category-releases tag-captain-marvel tag-carol-danvers tag-comics tag-marvel book_author-margaret-stohl">    
+
+    <!-- get navbar -->
+		
+	<!-- Navbar -->
+
+<nav class="fixed-header navbar navbar-height navbar-pos bg-navbar border-bottom">
+
+    <div class="navbar-container position-relative">
+
+        <!-- hamburger menu left-->
+        <span class="hamb-menu toggle-open-close"><i class="fas fa-th fa-lg mx-2 v-middle"></i></span> 
+		
+		<!-- logo -->		
+
+            <a class="navbar-logo-left" href="https://demo.ramsthemes.com/projects/exlibris/">
+
+                				<!-- display logo for normal mode -->
+				<img class="logo logow logores" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/exlibris-logo-normal.svg" alt="Normal Mode Logo">
+								
+								<!-- display logo for dark mode -->
+				<img class="logo logob logores" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/exlibris-logo-dark.svg" alt="Dark Mode Logo">
+								
+								<!-- display logo for normal mode -->
+				<img class="logo logow d-md-none" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/exlibris-logo-normal-res.svg" alt="Normal Mode Logo">
+								
+								<!-- display logo for dark mode -->
+				<img class="logo logob d-md-none" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/exlibris-logo-dark-res.svg" alt="Dark Mode Logo">
+				
+            </a>
+		
+		<!-- display search bar below -->
+		<div class="customsearch">
+		<form role="search" method="get" id="searchb" action="https://demo.ramsthemes.com/projects/exlibris/">
+    <input class="rounded-left" id="search-input" value="" name="s" placeholder="Search Books" role="search" type="search">
+    <button class="rounded-right" aria-label="submit" type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+	<input type="hidden" value="product" name="post_type" id="post_type" />
+</form>		</div>		
+			
+		<!-- icons on right -->
+		
+		<div class="navbar-icons">	
+		
+				
+			<!-- register -->
+			<div class="mx-3 d-none d-md-inline-block">
+			<a class="btn btn-custom btn-sm" href="https://demo.ramsthemes.com/projects/exlibris/register/">Register</a>
+			</div>
+					
+			
+				
+			<!-- login -->
+			<div class="d-none d-md-inline-block"> 
+			<a title="Login" href="https://demo.ramsthemes.com/projects/exlibris/my-account/"><i class="fas fa-sign-in-alt fa-lg v-middle mx-2"></i></a>
+			</div>
+						
+			<div class="navbar-box" id="topnav">
+
+								
+				<!-- Switch mode -->
+				            
+				<label for="mode" title="Switch Light/Dark mode" class="switch-checkbox icon-align-bottom mx-1 d-inline-block"><input id="mode" type="checkbox"><i class="fas fa-moon fa-lg v-middle unchecked"></i><i class="far fa-moon fa-lg v-middle checked"></i></label>
+								
+				<!-- cart -->
+					
+			
+										
+						<a class="cart-contents" href="https://demo.ramsthemes.com/projects/exlibris/cart/" title="Cart ">
+												<span class="cart-contents-count">357</span>
+												</a>
+				 
+									
+								
+				<!-- hamburger menu right -->
+				<div class="hamb-menu-right-box d-inline-block d-md-none">
+				<span class="toggle-open-close-right"><i class="fas fa-bars fa-lg hamb-menu-right v-middle"></i></span>
+				</div>
+
+			</div>	
+		
+		</div>
+
+    </div>
+
+</nav>
+
+<nav class="navbar navbar-search bg-navbar border-bottom">
+	
+	<!-- display search bar responsive -->
+	<div class="customsearch-res">
+	<form role="search" method="get" id="searchres" action="https://demo.ramsthemes.com/projects/exlibris/">
+    <input class="rounded-left" id="search-input-res" value="" name="s" placeholder="Search Books" role="search" type="search">
+    <button class="rounded-right" aria-label="submit" type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+	<input type="hidden" value="product" name="post_type" id="post_type_res" />
+</form>	</div>	
+
+</nav>
+
+
+<!-- sidenav left (dotted menu left) -->
+
+<div id="exlibris-sidenav-left" class="sidenav-l bg-side border-right">
+
+    <div class="buttons-sidenav" id="topnav">
+
+		<!-- close sidenav button -->
+		<span title="Close Menu" class="closebtn toggle-open-close"><i class="fas fa-times fa-lg"></i></span>
+    
+	</div>
+	
+	<div class="sidenav-margin-top"><div class="sidenav-nav-container-res"><ul id="accordion" class="menu"><li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-5 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris">Home</a></li>
+<li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/my-account/">My account</a></li>
+<li id="menu-item-231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/shop/">Shop</a></li>
+<li id="menu-item-233" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-parent-item menu-item-233 menu-hover"><a href="#" class="parent">Pages</a><span class='dropdown-sidenav-btn'><i class='fas fa-chevron-down fa-lg'></i></span>
+<ul class="sub-menu">
+	<li id="menu-item-236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-236 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/sample-page/">Sample Page</a></li>
+	<li id="menu-item-238" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-238 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/404/">404</a></li>
+</ul>
+</li>
+<li id="menu-item-230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/book-categories/">Book Categories</a></li>
+<li id="menu-item-234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/book-authors/">Book Authors</a></li>
+<li id="menu-item-328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/book-publishers/">Book Publishers</a></li>
+<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/blog/">Blog</a></li>
+<li id="menu-item-252" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-252 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/contact/">Contact</a></li>
+<li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/contact-form-7/">Contact Form 7</a></li>
+<li id="menu-item-348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/terms-and-conditions/">Terms and Conditions</a></li>
+</ul></div></div> 	
+
+</div>
+
+<!-- sidenav right (responsive) -->
+
+<div id="exlibris-sidenav-right" class="sidenav-r bg-side border-left">
+	
+	<div class="buttons-sidenav" id="topnav">	
+			
+						
+			<!-- Register and Login buttons -->
+				
+				<!-- register -->
+					
+				<label class="pointerbtn mr-3">
+				<a title="Register" href="https://demo.ramsthemes.com/projects/exlibris/register/"><i class="fas fa-forward fa-lg"></i></a>
+				</label>
+							
+				<!-- login -->					
+				<label class="pointerbtn"> 
+				<a title="Login" href="https://demo.ramsthemes.com/projects/exlibris/my-account/"><i class="fas fa-sign-in-alt fa-lg"></i></a>
+				</label>			
+			
+				
+	
+			<!-- close sidenav button -->
+			<span title="Close Menu" class="closebtn toggle-open-close-right"><i class="fas fa-times fa-lg"></i></span>
+			
+	</div>
+	
+	<div class="sidenav-margin-top">	
+	<div data-simplebar class="scrollbar-sidenav-res">			
+			
+			<!-- Shop sidebar and account sidebar-->
+			
+			<div class="sidenav-nav-container"><div id="nav_menu-2" class="widget_nav_menu mb-3"><div class="menu-sidenav-menu-container"><ul id="accordion-sidenav" class="menu"><li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-parent-item menu-item-241 menu-hover"><a href="#" class="parent">Academic</a><span class='dropdown-sidenav-btn'><i class='fas fa-chevron-down fa-lg'></i></span>
+<ul class="sub-menu">
+	<li id="menu-item-222" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-222 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/essays/">Essays</a></li>
+	<li id="menu-item-224" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-224 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/investigation/">Investigation</a></li>
+</ul>
+</li>
+<li id="menu-item-240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-parent-item menu-item-240 menu-hover"><a href="#" class="parent">Art</a><span class='dropdown-sidenav-btn'><i class='fas fa-chevron-down fa-lg'></i></span>
+<ul class="sub-menu">
+	<li id="menu-item-217" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-217 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/architecture/">Architecture</a></li>
+	<li id="menu-item-220" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-220 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/design/">Design</a></li>
+</ul>
+</li>
+<li id="menu-item-218" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-218 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/auto-help/">Auto Help</a></li>
+<li id="menu-item-219" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-219 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/biographies/">Biographies</a></li>
+<li id="menu-item-221" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-221 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/economy/">Economy</a></li>
+<li id="menu-item-223" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-223 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/finances/">Finances</a></li>
+<li id="menu-item-239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-parent-item menu-item-239 menu-hover"><a href="#" class="parent">Literature</a><span class='dropdown-sidenav-btn'><i class='fas fa-chevron-down fa-lg'></i></span>
+<ul class="sub-menu">
+	<li id="menu-item-225" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-225 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/novel/">Novel</a></li>
+	<li id="menu-item-229" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-229 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/theater/">Theater</a></li>
+	<li id="menu-item-228" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-228 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/stories/">Stories</a></li>
+</ul>
+</li>
+<li id="menu-item-226" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-226 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/philosophy/">Philosophy</a></li>
+<li id="menu-item-227" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-227 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/psychology/">Psychology</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-310 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/comics/">Comics</a></li>
+</ul></div></div></div>
+	</div></div>	
+</div>		
+    <!-- main container -->
+	
+    <main class="pt-fixed">
+	
+	<div class="container-fluid">
+	
+		
+<div class="wrapper">	
+		
+		<nav id="sidebar"><div data-simplebar class="wc-navigation-sticky-top scrollbar-sidenav"><div class="sidenav-nav-container"><div id="nav_menu-2" class="widget_nav_menu mb-3"><div class="menu-sidenav-menu-container"><ul id="accordion-sidenav" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-parent-item menu-item-241 menu-hover"><a href="#" class="parent">Academic</a><span class='dropdown-sidenav-btn'><i class='fas fa-chevron-down fa-lg'></i></span>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-222 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/essays/">Essays</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-224 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/investigation/">Investigation</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-parent-item menu-item-240 menu-hover"><a href="#" class="parent">Art</a><span class='dropdown-sidenav-btn'><i class='fas fa-chevron-down fa-lg'></i></span>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-217 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/architecture/">Architecture</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-220 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/design/">Design</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-218 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/auto-help/">Auto Help</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-219 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/biographies/">Biographies</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-221 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/economy/">Economy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-223 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/finances/">Finances</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-parent-item menu-item-239 menu-hover"><a href="#" class="parent">Literature</a><span class='dropdown-sidenav-btn'><i class='fas fa-chevron-down fa-lg'></i></span>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-225 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/novel/">Novel</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-229 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/theater/">Theater</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-228 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/stories/">Stories</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-226 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/philosophy/">Philosophy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-227 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/psychology/">Psychology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-310 menu-hover"><a href="https://demo.ramsthemes.com/projects/exlibris/product-category/comics/">Comics</a></li>
+</ul></div></div></div></div></nav>		
+		<div id="page-content-wrapper">  
+		
+			<h2 class="m-3">Page not found</h2>
+			
+			<div class="d-flex flex-wrap">
+			
+				<div class="col-12 my-3">
+				
+					<div class="alert alert-warning" role="alert">
+					We seem to have messed something up. Sorry about that. Have a look at the address to see if you can spot an error.					</div>
+					
+					<div class="my-3 text-center"><a href="https://demo.ramsthemes.com/projects/exlibris/" class="btn btn-custom btn-sm rounded-pill text-uppercase">Back to home</a></div>
+						
+				</div>	 
+				
+				<div class="col-12 my-3"><h4>Latest books</h4>
+
+<div class="row">
+
+<div class="carousel my-3 w-100" data-flickity='{ "pageDots": false, "imagesLoaded": true, "wrapAround": true, "cellAlign": "left", "rightToLeft": false }'>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/the-life-of-captain-marvel/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/captain-marvel-extra-scaled-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/the-life-of-captain-marvel/">
+						<h5 class="my-2 text-break">The Life of Captain Marvel</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/margaret-stohl/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/IMG_9679-36x36.jpg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/margaret-stohl/">Margaret Stohl</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/hidden-bodies/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/Hidden-Bodies-Caroline-Kepnes-scaled-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/hidden-bodies/">
+						<h5 class="my-2 text-break">Hidden Bodies</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/caroline-kepnes/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/caroline-kepnes-36x36.jpg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/caroline-kepnes/">Caroline Kepnes</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/you/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/You-Caroline-Kepnes-scaled-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/you/">
+						<h5 class="my-2 text-break">You</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/caroline-kepnes/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2020/01/caroline-kepnes-36x36.jpg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/caroline-kepnes/">Caroline Kepnes</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/nausea/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/09/nausea-sartre-scaled-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/nausea/">
+						<h5 class="my-2 text-break">Nausea</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/jean-paul-sartre/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/09/sartre-36x36.jpeg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/jean-paul-sartre/">Jean-Paul Sartre</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/persepolis/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/persepolis-marjane-satrapi-1-scaled-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/persepolis/">
+						<h5 class="my-2 text-break">Persépolis</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/marjane-satrapi/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/Marjane-Satrapi-36x36.jpg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/marjane-satrapi/">Marjane Satrapi</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/think-and-grow-rich/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/thinkandgroerich-napoleonhill-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/think-and-grow-rich/">
+						<h5 class="my-2 text-break">Think and Grow Rich</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/napoleon-hill/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/napoleon-hill-36x36.jpg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/napoleon-hill/">Napoleon Hill</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/the-shining/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/theshining-stephenking-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/the-shining/">
+						<h5 class="my-2 text-break">The Shining</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/stephen-king/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/stephen-king-36x36.jpeg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/stephen-king/">Stephen King</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+            <div class="post-blog col-sm-6 col-lg-4 col-xl-five p-3 item">				
+				
+				<div class="d-block selected-books">
+				
+				<div class="d-block">
+
+					<a href="https://demo.ramsthemes.com/projects/exlibris/product/the-plague/"><img width="300" height="450" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/theplague-albertcamus-300x450.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
+					
+				</div>
+				
+				<div class="d-block position-relative">
+				
+					<div class="p-2">
+
+						<a href="https://demo.ramsthemes.com/projects/exlibris/product/the-plague/">
+						<h5 class="my-2 text-break">The Plague</h5>
+						</a>
+						
+												
+						<!-- Book rating --> 
+
+						<div class="woocommerce d-flex my-2"></div>						
+						
+														
+								
+											
+										
+									<div class="author-list my-3">
+									
+										<div class="float-left mr-2">
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/albert-camus/">
+										<img class="img-fluid rounded-circle shadow-sm" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/albert-camus-36x36.jpg">
+										</a>
+										</div>
+										
+										<div class="author-list-name">							
+										<a href="https://demo.ramsthemes.com/projects/exlibris/book-author/albert-camus/">Albert Camus</a>
+										</div>
+										
+									</div>					
+									
+								
+						
+					</div>
+					
+				</div>
+				
+				</div>
+
+            </div>
+
+        
+</div>
+
+</div>  
+
+<h4>Latest blog posts</h4>
+
+<div class="row">
+
+<div class="carousel my-3 w-100" data-flickity='{ "pageDots": false, "imagesLoaded": true, "wrapAround": true, "cellAlign": "left", "rightToLeft": false }'>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/The-Life-Of-Captain-Marvel-1170x658.jpg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/the-life-of-captain-marvel-trailer-released/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/releases/">Releases</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/the-life-of-captain-marvel-trailer-released/">
+                        <h6 class="my-2">&#8216;The Life Of Captain Marvel&#8217; Trailer Released</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						September 7, 2019					</small>
+					
+					</div>
+
+        </div>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/aldous-huxley-2-1170x658.jpg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/aldous-huxley-the-writer-of-the-unhappy-world/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/summaries/">Summaries</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/aldous-huxley-the-writer-of-the-unhappy-world/">
+                        <h6 class="my-2">Aldous Huxley, the writer of the (un)happy world</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						August 7, 2019					</small>
+					
+					</div>
+
+        </div>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/tara-westover-time-100-2019-005-1170x658.jpg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/tara-westovers-incredible-story-about-leaving-her-strict-survivalist-family/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/interviews/">Interviews</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/tara-westovers-incredible-story-about-leaving-her-strict-survivalist-family/">
+                        <h6 class="my-2">Tara Westover’s Incredible Story About Leaving Her Strict Survivalist Family</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						July 7, 2019					</small>
+					
+					</div>
+
+        </div>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/20171208231610-RobertKiyosaki-1-1170x658.jpeg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/robert-kiyosaki-those-who-save-are-losers/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/interviews/">Interviews</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/robert-kiyosaki-those-who-save-are-losers/">
+                        <h6 class="my-2">Robert Kiyosaki: &#8220;Those who save are losers&#8221;</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						June 7, 2019					</small>
+					
+					</div>
+
+        </div>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/t_1521319898881_name_simone_de_beauvoir__2_-1170x658.jpg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/notes-on-old-age-through-time/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/summaries/">Summaries</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/notes-on-old-age-through-time/">
+                        <h6 class="my-2">Notes on old age (through time)</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						May 7, 2019					</small>
+					
+					</div>
+
+        </div>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/david-carson-1170x658.jpg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/david-carson-innovation-and-typographic-experimentation/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/releases/">Releases</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/david-carson-innovation-and-typographic-experimentation/">
+                        <h6 class="my-2">David Carson, innovation and typographic experimentation</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						April 4, 2018					</small>
+					
+					</div>
+
+        </div>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2019/07/4471471260799_XXL-1170x658.jpg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/the-curious-infinite-of-jorge-luis-borges/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/summaries/">Summaries</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/the-curious-infinite-of-jorge-luis-borges/">
+                        <h6 class="my-2">The Curious Infinite Of Jorge Luis Borges</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						March 5, 2017					</small>
+					
+					</div>
+
+        </div>
+
+        
+            <div class="post-blog col col-lg-6 col-xl-3 p-3 item col-hover">
+
+                    <div class="img__wrap border-class">                        
+						
+						<img width="1170" height="658" src="https://demo.ramsthemes.com/projects/exlibris/wp-content/uploads/2016/02/Thomas-Piketty-1200x670_c-1170x658.jpg" class="img-fluid border-class shadow-sm wp-post-image" alt="" />                        
+                        <a href="https://demo.ramsthemes.com/projects/exlibris/about-thomas-piketty-and-inequality-as-a-manifest-destiny/" class="imageoutlink"></a>                        
+
+                    </div>
+
+					<div class="p-2">
+					
+					<small class="text-uppercase d-block my-2"><a class="catlist" href="https://demo.ramsthemes.com/projects/exlibris/category/summaries/">Summaries</a></small>					
+					<a href="https://demo.ramsthemes.com/projects/exlibris/about-thomas-piketty-and-inequality-as-a-manifest-destiny/">
+                        <h6 class="my-2">About Thomas Piketty and inequality as a manifest destiny</h6>
+                    </a>
+					
+					<small class="text-uppercase mb-2">
+						February 6, 2016					</small>
+					
+					</div>
+
+        </div>
+
+        
+</div>    
+
+</div> </div>		
+			
+			</div>
+			
+		</div>
+		
+</div>
+		
+</div>
+
+<footer>
+
+    <div class="container-fluid py-3 bg-footer">
+        
+		<div class="row">
+
+        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="p-3">
+            <div id="text-2" class="widget_text"><h6>Our work is</h6>			<div class="textwidget"><p>Designed, crafted and built with WordPress, Bootstrap and ACF Pro.</p>
+</div>
+		</div>        </div>
+    </div>
+    
+        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="p-3">
+            <div id="text-3" class="widget_text"><h6>Contact</h6>			<div class="textwidget"><p>Quadra 140<br />
+Farvagny-le-Grand &#8211; Switzerland<br />
+1726<br />
+026 216 24089</p>
+<p>info@example.com</p>
+</div>
+		</div>        </div>
+    </div>
+    
+        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="p-3">
+             
+
+		<div id="text-4" class="widget_text"><h6>Find Us</h6>			<div class="textwidget"><a href="#"><i class="mx-1 fab fa-facebook fa-2x"></i><span class="screen-reader-text">Facebook</span></a><a href="#"><i class="mx-1 fab fa-twitter fa-2x"></i><span class="screen-reader-text">Twitter</span></a><a href="#"><i class="mx-1 fab fa-linkedin fa-2x"></i><span class="screen-reader-text">Linkedin</span></a><a href="#"><i class="mx-1 fab fa-instagram fa-2x"></i><span class="screen-reader-text">Instagram</span></a><a href="#"><i class="mx-1 fab fa-telegram fa-2x"></i><span class="screen-reader-text">Telegram</span></a><a href="#"><i class="mx-1 fab fa-youtube fa-2x"></i><span class="screen-reader-text">Youtube</span></a>
+</div>
+		</div>        </div>
+    </div>
+    
+        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="p-3">
+             
+
+		<div id="text-5" class="widget_text"><h6>About</h6>			<div class="textwidget">		
+		<p><i class="far fa-copyright fa-sm"></i> <span>2020 EXLIBRIS</br>
+		All Rights Reserved</p>	
+		
+<p>Designed with ❤️ and 🧠 by RAMSTHEMES</p>
+</div>
+		</div>        </div>
+    </div>
+    
+</div>
+    </div>
+	
+</footer>
+
+<a href="https://demo.ramsthemes.com/projects/exlibris/" id="back-to-home" class="btn-custom" title="Back to home"><i class="fas fa-chevron-left"></i></a>
+
+<a href="#" id="back-to-top" class="btn-custom" title="Back to top"><i class="fas fa-chevron-up"></i></a>
+
+</main>
+
+	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/demo.ramsthemes.com\/projects\/exlibris\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.9'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/projects\/exlibris\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/projects\/exlibris\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demo.ramsthemes.com\/projects\/exlibris\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.2.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/projects\/exlibris\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/projects\/exlibris\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=4.2.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/projects\/exlibris\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/projects\/exlibris\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_fd15fa741a71833ff4661959146e771c","fragment_name":"wc_fragments_fd15fa741a71833ff4661959146e771c","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=4.2.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/bootstrap/bootstrap.bundle.min.js?ver=4.3.1'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/mode.js?ver=1.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/lightbox/ekko-lightbox.min.js?ver=1.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/custom.js?ver=1.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/navbar.js?ver=1.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/bootstrap-drawer.js?ver=1.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/pkgd/flickity.pkgd.min.js?ver=2.2'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/flickity-custom.js?ver=1.0.2'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/wooalign-public.js?ver=1.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-content/themes/exlibriswp/assets/js/pace/pace.min.js?ver=1.0'></script>
+<script  src='https://demo.ramsthemes.com/projects/exlibris/wp-includes/js/wp-embed.min.js?ver=5.4.2'></script>
+
+</body>
+
+</html>
