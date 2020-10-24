@@ -24,7 +24,7 @@
                 @include('web-client.books.book-component')
             @endforeach
         </div>
-        {{$books->links()}}
+        {{$books->appends(request()->except('page'))->links()}}
     </div>
 </div>
 @endsection

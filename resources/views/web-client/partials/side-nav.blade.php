@@ -24,7 +24,7 @@
                             href="{{route('web-client.books')}}">All books</a></li>
                     <li id="menu-item-348"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348 menu-hover"><a
-                            href="{{route('web-client.books.recommended')}}">Recommended books</a></li>
+                            href="{{route('web-client.books').'?rec=23d4'}}">Recommended books</a></li>
                     <li id="menu-item-348"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348 menu-hover"><a
                             href="{{route('web-client.tac')}}">Terms and Conditions</a></li>

@@ -21,7 +21,7 @@
         </div>
 
         <div class="card-header">
-            <h3>{{ trans('messages.subadmin') }}:</h3>
+            <h3>{{ trans('messages.college') }} {{ trans('messages.subadmin') }}:</h3>
             <a id="back" href="{{route('college.addsubadmin', [$college->college_id])}}"  class="btn btn-sm btn-primary float-right text-white inline ml-3">{{ trans('messages.addsubadmin') }}</a>
         </div>
         <div class="col-md-12 mb-3">

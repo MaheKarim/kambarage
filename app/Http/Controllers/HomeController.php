@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         $auth_user=authSession();
 
-        if($auth_user->role_id===11 || $auth_user->user_type === "admins")
+        if($auth_user->role_id===1 || $auth_user->user_type === "admin")
         {
             $book=Book::orderBy('book_id','DESC')->with(['getAuthor'])->get();
             $user = User::where('user_type','user')->orderBy('id','DESC')->get();
@@ -143,7 +143,6 @@ class HomeController extends Controller
         else
         {
             return view('errors.error_403');
-            abort(401);
         }
     }
 
