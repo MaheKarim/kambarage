@@ -40,6 +40,30 @@ class UsersTableSeeder extends Seeder
             ),
         ));
 
+        \DB::table('users')->insert(array (
+            0 =>
+            array (
+                'id' => 3,
+                'username' => 'teacher',
+                'name' => 'teacher',
+                'email' => 'teacher@kambarage.com',
+                'contact_number' => '01778966356',
+                'email_verified_at' => '2019-09-18 11:27:05',
+                'password' => bcrypt('12345678'),
+                'remember_token' => NULL,
+                'activation_token' => NULL,
+                'user_type' => 'admin',
+                'registration_id' => NULL,
+                'device_id' => NULL,
+                'image' => NULL,
+                'deleted_at' => NULL,
+                'status' => 'active',
+                'created_at' => '2019-09-18 11:27:05',
+                'updated_at' => '2019-09-18 11:27:05',
+                'role_id' => 3,
+            ),
+        ));
+
 
     }
 }
